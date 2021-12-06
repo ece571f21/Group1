@@ -1,0 +1,97 @@
+# Compile of axi4lite_bfm.sv was successful.
+# Compile of axi4lite_inf.sv was successful.
+# Compile of axi4lite_master.svp was successful.
+# Compile of axi4lite_pkg.sv was successful.
+# Compile of axi4lite_slave.svp was successful.
+# Compile of Classes.sv was successful.
+# Compile of design.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of Assertions.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# End time: 09:54:13 on Dec 06,2021, Elapsed time: 9:04:02
+# Errors: 1, Warnings: 5
+# vsim -voptargs="+acc" work.top 
+# Start time: 09:54:14 on Dec 06,2021
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.axi4lite_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.design_sv_unit(fast)
+# Loading work.DUV(fast)
+# Loading work.axi4lite_bfm_sv_unit(fast)
+# Loading work.axi4lite_bfm(fast__1)
+# Loading work.axi4lite_master_svp_unit(fast)
+# Loading work.axi4lite_master(fast)
+# Loading work.axi4lite_slave_svp_unit(fast)
+# Loading work.axi4lite_slave(fast)
+# Loading work.Assertions_sv_unit(fast)
+# Loading work.Assertions(fast)
+run -all
+# ECE 571 Fall 2021: Final Project AXI4 Lite Testbench implementation - Pradeep Reddy (pmanthu@pdx.edu) Naveen Manivannan(nav9@pdx.edu) Narendra Srinivas(nraghav2@pdx.edu)
+# Sources: N:/ece571f21/nav9/final_project/hdl
+# 
+#                   10 Memory Write to address 0001
+# 			data: 0001
+#                  350 Memory Read from Address 0001
+# 			Mem data = 0001	Expected = 0001
+# Memory data matches...so far, so good
+#                  370 Memory Write to address 0fff
+# 			data: 0002
+#                  710 Memory Read from Address 0fff
+# 			Mem data = 0002	Expected = 0002
+# Memory data matches...so far, so good
+#                  730 Memory Write to address 1000
+# 			data: 0003
+# ** Error: Assertion error.
+#    Time: 1050 ns Started: 1050 ns  Scope: top.duv.asser.RDATA_xcheck_a File: N:/ece571f21/nav9/final_project/hdl/Assertions.sv Line: 122
+#                 1070 Memory Read from Address 1000
+# 			Mem data = xxxx	Expected = 0000
+# Memory data matches...so far, so good
+#                 1090 Memory Write to address 0001
+# 			data: 0004
+#                 1430 Memory Read from Address 0001
+# 			Mem data = 0004	Expected = 0004
+# Memory data matches...so far, so good
+# ** Error: Assertion error.
+#    Time: 1750 ns Started: 1750 ns  Scope: top.duv.asser.RDATA_xcheck_a File: N:/ece571f21/nav9/final_project/hdl/Assertions.sv Line: 122
+#                 1770 Memory Read from Address 0005
+# 			Mem data = xxxx	Expected = 0000
+# Memory data matches...so far, so good
+#                 1790 Memory Write to address 0005
+# 			data: 0008
+#                 1810 Memory Write to address 0001
+# 			data: 84de0e74
+#                 2030 Memory Write to address 0002
+# 			data: 40d5b0bd
+#                 2250 Memory Write to address 0003
+# 			data: 75bff3b3
+#                 2470 Memory Write to address 0004
+# 			data: 91b126d1
+#                 2690 Memory Write to address 0005
+# 			data: 31b523ca
+#                 3030 Memory Read from Address 0001
+# 			Mem data = 84de0e74	Expected = 84de0e74
+# Memory data matches...so far, so good
+#                 3370 Memory Read from Address 0002
+# 			Mem data = 40d5b0bd	Expected = 40d5b0bd
+# Memory data matches...so far, so good
+#                 3710 Memory Read from Address 0003
+# 			Mem data = 75bff3b3	Expected = 75bff3b3
+# Memory data matches...so far, so good
+#                 4050 Memory Read from Address 0004
+# 			Mem data = 91b126d1	Expected = 91b126d1
+# Memory data matches...so far, so good
+#                 4390 Memory Read from Address 0005
+# 			Mem data = 31b523ca	Expected = 31b523ca
+# Memory data matches...so far, so good
+# Test complete - no errors detected, take the rest of the day off
+# 
+# End simulation of ECE 571 Fall 2021:  Final Project AXI4 Lite Testbench implementation - Pradeep Reddy (pmanthu@pdx.edu) Naveen Manivannan(nav9@pdx.edu) Narendra Srinivas(nraghav2@pdx.edu)
+# 
+# ** Note: $stop    : N:/ece571f21/nav9/final_project/hdl/testbench.sv(188)
+#    Time: 4610 ns  Iteration: 1  Instance: /top
+# Break in NamedBeginStat stimulus at N:/ece571f21/nav9/final_project/hdl/testbench.sv line 188
+
+ 

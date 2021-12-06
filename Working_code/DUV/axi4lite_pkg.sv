@@ -8,7 +8,9 @@ package axi4lite_pkg;
 
   parameter
       ADDRWIDTH = 32,// Address width of the bus
-      DATAWIDTH = 32;// Data width of the bus
+      DATAWIDTH = 32,// Data width of the bus
+	  MEMADDRBITS = 12,               // memory array address bits
+	  MEMSIZE = 2**MEMADDRBITS;       // memory size based on memory address
 
 typedef enum logic [1:0] {IDLE, ADDR, DATA, RESP} state; // states for read/write operation
 

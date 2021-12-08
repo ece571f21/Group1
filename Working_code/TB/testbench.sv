@@ -133,38 +133,38 @@ initial begin: stimulus
 	
 	  #10 trans = new();
 	
-	//writing to a given location
+	//writing to a given location  Test_WR_Location
 	wrReq(32'h00000001,32'h00000001);
     repeat (10) @(posedge clk);
 	
-	//reading from a given location
+	//reading from a given location Test_RD_Location
 	rdReq(32'h00000001);
 	
-	//writing to the last location
+	//writing to the last location Test_WR_Last
 	wrReq(32'h00000FFF,32'h00000002);
     repeat (10) @(posedge clk);
 	
-	//reading from the last location
+	//reading from the last location Test_RD_Last
 	rdReq(32'h00000FFF);
 	
-	//writing to location that is not in memory array
+	//writing to location that is not in memory array Test_WR_Outofrange
 	wrReq(32'h00001000,32'h00000003);
     repeat (10) @(posedge clk);
 	
-	//reading from a location that is not in memory array
+	//reading from a location that is not in memory array Test_RD_Outofrange
 	rdReq(32'h00001000);
 	
-	//Write and read previously written location
+	//Write and read previously written location Test_WR_RD
 	wrReq(32'h00000001,32'h00000004);
     repeat (10) @(posedge clk);
 	rdReq(32'h00000001);
 	
-	//Read a location and write it
+	//Read a location and write it Test_RD_WR
 	repeat (10) @(posedge clk);
 	rdReq(32'h00000005);
 	wrReq(32'h00000005,32'h00000008);
 	
-    //Writing to successive locations
+    //Writing to successive locations Test_WR_Successive
     for(int i = 1; i<= 5; i++) begin
 	rand_flag=trans.randomize();
 	if(!rand_flag)
@@ -173,7 +173,7 @@ initial begin: stimulus
 	repeat (10) @(posedge clk);	
     end
 
-    //Reading from successive locations
+    //Reading from successive locations Test_RD_Successive
     for(int i = 1; i<=5; i++) begin
 	rdReq(i);
 	repeat (10) @(posedge clk);
